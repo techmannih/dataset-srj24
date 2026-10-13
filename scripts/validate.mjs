@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs"
 import { createRequire } from "node:module"
+import { validateOpenOutlineKeepouts } from "./validate-open-outline-keepouts.mjs"
 
 const require = createRequire(import.meta.url)
 const dataset = require("../index.js")
@@ -139,6 +140,7 @@ assert(repositoryLicense.includes("Apache License, Version 2.0"), "Repository li
 let hasVeryHighComplexityBoard = false
 let hasTinyRoutingProblem = false
 let validatedThroughHoleCount = 0
+let validatedOpenKeepoutCount = 0
 const observedLayerCounts = new Set()
 
 for (const [index, source] of sourceFiles.entries()) {
@@ -216,6 +218,7 @@ for (const [index, source] of sourceFiles.entries()) {
   }
 
   const circuitJson = JSON.parse(readFileSync(circuitJsonPath, "utf8"))
+  validatedOpenKeepoutCount += validateOpenOutlineKeepouts(sample, circuitJson)
   const board = circuitJson.find((element) => element.type === "pcb_board")
   assert(board, `${exportName} Circuit JSON is missing a PCB board`)
   assert(board.num_layers === sample.layerCount, `${exportName} has inconsistent board layer counts`)
@@ -313,5 +316,5 @@ assert(
 assert(Object.keys(dataset.dataset).length === expectedSampleCount, "Dataset export count is incorrect")
 
 console.log(
-  `Validated ${expectedSampleCount} SRJ samples and ${validatedThroughHoleCount} through-hole obstacles with pinned sources, licensing, and conversion checks`,
+  `Validated ${expectedSampleCount} SRJ samples, ${validatedThroughHoleCount} through-hole obstacles, and ${validatedOpenKeepoutCount} open outline keepouts with pinned sources, licensing, and conversion checks`,
 )
