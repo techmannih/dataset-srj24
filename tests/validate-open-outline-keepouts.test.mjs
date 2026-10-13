@@ -4,11 +4,14 @@ import { validateOpenOutlineKeepouts } from "../scripts/validate-open-outline-ke
 
 const sample = JSON.parse(readFileSync(new URL("../samples/sample024.json", import.meta.url)))
 const circuitJson = JSON.parse(readFileSync(new URL(`../${sample.sourceCircuitJson}`, import.meta.url)))
-const firstSegmentId = "pcb_keepout_altium_arc_4641_segment_0_rect_0"
-const firstJoinId = "pcb_keepout_altium_arc_4641_join_0_rect_0"
+const firstSegmentId = "pcb_keepout_altium_arc_4641_segment_0"
+const firstJoinId = "pcb_keepout_altium_arc_4641_join_0"
 
 test("the five PMP22650 open arcs match the source geometry", () => {
   expect(validateOpenOutlineKeepouts(sample, circuitJson)).toBe(5)
+  expect(sample.obstacles.filter((obstacle) => /^pcb_keepout_altium_arc_464[1-5]_/.test(obstacle.obstacleId ?? ""))).toHaveLength(475)
+  expect(sample.obstacles.find((obstacle) => obstacle.obstacleId === firstSegmentId)).toBeDefined()
+  expect(sample.obstacles.find((obstacle) => obstacle.obstacleId === firstJoinId)).toBeDefined()
 })
 
 test.each([
@@ -16,6 +19,7 @@ test.each([
   ["one segment removed", (obstacles) => obstacles.filter((o) => o.obstacleId !== firstSegmentId)],
   ["one join removed", (obstacles) => obstacles.filter((o) => o.obstacleId !== firstJoinId)],
   ["wrong rotation", (obstacles) => obstacles.map((o) => o.obstacleId === firstSegmentId ? { ...o, ccwRotationDegrees: 45 } : o)],
+  ["missing rotation", (obstacles) => obstacles.map((o) => o.obstacleId === firstSegmentId ? { ...o, ccwRotationDegrees: undefined } : o)],
   ["wrong layer", (obstacles) => obstacles.map((o) => o.obstacleId === firstSegmentId ? { ...o, layers: ["top"] } : o)],
   ["wrong stroke width", (obstacles) => obstacles.map((o) => o.obstacleId === firstSegmentId ? { ...o, height: o.height / 2 } : o)],
   ["wrong position", (obstacles) => obstacles.map((o) => o.obstacleId === firstSegmentId ? { ...o, center: { x: 0, y: 0 } } : o)],
@@ -27,8 +31,7 @@ test.each([
   expect(() => validateOpenOutlineKeepouts({ ...sample, obstacles: mutate(sample.obstacles) }, circuitJson)).toThrow(/open keepout/)
 })
 
-// An independent, small native-rectangle fixture keeps validation compatible
-// with a future regeneration without taking a dependency on another PR.
+// A small independent fixture also checks arbitrary native outline geometry.
 const nativeKeepout = {
   type: "pcb_keepout",
   pcb_keepout_id: "pcb_keepout_open_path",
