@@ -368,5 +368,5 @@ bun run test
 This uses the core and autorouter versions pinned in `package.json` and
 `bun.lock`, validates the five open keepout outlines, and preserves the
 original Altium and Circuit JSON comparison panels. The preview packages
-currently track core PR #4597 (`e24a6c2`) and autorouter PR #3054 (`99da1543`);
+currently track core PR #4597 (`e24a6c2`) and autorouter PR #3054 (`c063b4e`);
 replace them with released versions containing those fixes before publishing.

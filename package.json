@@ -25,7 +25,7 @@
     "test": "bun scripts/validate.mjs && bun test tests"
   },
   "devDependencies": {
-    "@tscircuit/capacity-autorouter": "https://github.com/techmannih/tscircuit-autorouter/releases/download/preview-99da15430053bc34b9220f7fff8458e1526d86f6/tscircuit-capacity-autorouter-0.0.979.tgz",
+    "@tscircuit/capacity-autorouter": "https://pkg.pr.new/tscircuit/tscircuit-autorouter/@tscircuit/capacity-autorouter@c063b4e",
     "@tscircuit/checks": "^0.0.227",
     "@tscircuit/circuit-json-util": "^0.0.121",
     "@tscircuit/common": "^0.0.42",

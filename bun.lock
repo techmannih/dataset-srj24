@@ -5,7 +5,7 @@
     "": {
       "name": "@tscircuit/dataset-srj24",
       "devDependencies": {
-        "@tscircuit/capacity-autorouter": "https://github.com/techmannih/tscircuit-autorouter/releases/download/preview-99da15430053bc34b9220f7fff8458e1526d86f6/tscircuit-capacity-autorouter-0.0.979.tgz",
+        "@tscircuit/capacity-autorouter": "https://pkg.pr.new/tscircuit/tscircuit-autorouter/@tscircuit/capacity-autorouter@c063b4e",
         "@tscircuit/checks": "^0.0.227",
         "@tscircuit/circuit-json-util": "^0.0.121",
         "@tscircuit/common": "^0.0.42",
@@ -373,7 +373,7 @@
 
     "@tscircuit/cableprinter": ["@tscircuit/cableprinter@0.0.6", "", { "dependencies": { "zod": "^3.25.76" } }, "sha512-zF8n02gMfwM+0oo1OkRsQMSErPKslzyMSvko2qpp5GJ0zi4+PsNwYDAMKZ2608vFs88WfDrol2eQr1AirUTCbw=="],
 
-    "@tscircuit/capacity-autorouter": ["@tscircuit/capacity-autorouter@https://github.com/techmannih/tscircuit-autorouter/releases/download/preview-99da15430053bc34b9220f7fff8458e1526d86f6/tscircuit-capacity-autorouter-0.0.979.tgz", { "dependencies": { "@tscircuit/pcb-trace-linter": "github:tscircuit/pcb-trace-linter#4c035f9d40ffb03ba547a08975b5e64b20371123", "fast-json-stable-stringify": "^2.1.0", "object-hash": "^3.0.0", "stack-svgs": "^0.0.1" } }, "sha512-KzMyMwtTpJe/3TSGzN6Q+oLlaAiIiBd8hTHBMhxnXh4t2DCCcWwhnNFWvPd8K/7fmmAQkDWXhOKNWdEMt+RepA=="],
+    "@tscircuit/capacity-autorouter": ["@tscircuit/capacity-autorouter@https://pkg.pr.new/tscircuit/tscircuit-autorouter/@tscircuit/capacity-autorouter@c063b4e", { "dependencies": { "@tscircuit/pcb-trace-linter": "github:tscircuit/pcb-trace-linter#4c035f9d40ffb03ba547a08975b5e64b20371123", "fast-json-stable-stringify": "^2.1.0", "object-hash": "^3.0.0", "stack-svgs": "^0.0.1" } }, "sha512-IuHNwv+NxbdC7h4Jvahx13SqffzabpsaVKhsqdYW5sHw4rCTA3aur5B6HmSmmbg3WnoOqtRcve/N88COWVWMDw=="],
 
     "@tscircuit/checks": ["@tscircuit/checks@0.0.227", "", { "dependencies": { "flatbush": "^4.6.2" }, "peerDependencies": { "@flatten-js/core": "*", "@tscircuit/math-utils": "*", "circuit-json": "*", "circuit-json-to-connectivity-map": "*", "typescript": "^5.5.3" } }, "sha512-gSFhhYCJc5L1iTpwn6SYfKew4jaGRxfmaZzJe+WLiAjLavu2gaqV3hVjcKT7j3BmSmbjJHGHf+7ONskMqNGqxQ=="],
 
@@ -1169,7 +1169,7 @@
 
     "tscircuit/calculate-cell-boundaries/react-dom/scheduler": ["scheduler@0.23.2", "", { "dependencies": { "loose-envify": "^1.1.0" } }, "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ=="],
 
-    "tscircuit/circuit-json-to-gltf/jscad-electronics/circuit-json": ["circuit-json@0.0.506", "", { "peerDependencies": { "format-si-unit": "*" } }, "sha512-bY2MlEnjSVFJsBbpRcqAzNIDhzoJCNWvHOEH2+75sN4eMvUpFW9yeDCY7l3RhFjORfIN2w9+KvoQnMAqfV9/Bw=="],
+    "tscircuit/circuit-json-to-gltf/jscad-electronics/circuit-json": ["circuit-json@0.0.525", "", { "peerDependencies": { "format-si-unit": "*" } }, "sha512-reqY2m91wE2OcdVsTpnCZusZplsJl/rtq49SnN5beIDMVy2jRIiimDNuiQkcWYek9eYKScHhrBfFsA7hDM9OIw=="],
 
     "tscircuit/circuit-json-to-spice/circuit-json-to-connectivity-map/@tscircuit/math-utils": ["@tscircuit/math-utils@0.0.9", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-sPzfXndijet8z29X6f5vnSZddiso2tRg7m6rB+268bVj60mxnxUMD14rKuMlLn6n84fMOpD/X7pRTZUfi6M+Tg=="],
 
