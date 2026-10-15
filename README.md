@@ -367,6 +367,8 @@ bun run test
 
 This uses the core and autorouter versions pinned in `package.json` and
 `bun.lock`, validates the five open keepout outlines, and preserves the
-original Altium and Circuit JSON comparison panels. The preview packages
-currently track core PR #4597 (`e24a6c2`) and autorouter PR #3054 (`c063b4e`);
-replace them with released versions containing those fixes before publishing.
+original Altium and Circuit JSON comparison panels. The official releases
+`@tscircuit/core@0.0.2163` and `@tscircuit/capacity-autorouter@0.0.985` contain
+the merged [core #4669](https://github.com/tscircuit/core/pull/4669) and
+[autorouter #3098](https://github.com/tscircuit/tscircuit-autorouter/pull/3098)
+fixes.

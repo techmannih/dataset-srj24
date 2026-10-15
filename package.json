@@ -25,12 +25,12 @@
     "test": "bun scripts/validate.mjs && bun test tests"
   },
   "devDependencies": {
-    "@tscircuit/capacity-autorouter": "https://pkg.pr.new/tscircuit/tscircuit-autorouter/@tscircuit/capacity-autorouter@c063b4e",
+    "@tscircuit/capacity-autorouter": "0.0.985",
     "@tscircuit/checks": "^0.0.227",
     "@tscircuit/circuit-json-util": "^0.0.121",
     "@tscircuit/common": "^0.0.42",
     "@tscircuit/copper-pour-solver": "^0.0.30",
-    "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@e24a6c2",
+    "@tscircuit/core": "0.0.2163",
     "@tscircuit/create-fdm-enclosure": "0.0.4",
     "@tscircuit/footprinter": "^0.0.426",
     "@tscircuit/image-utils": "^0.0.8",
