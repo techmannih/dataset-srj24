@@ -356,19 +356,3 @@ convert it to Circuit JSON, and then produce Simple Route JSON. The TI samples
 store the released Altium converter and SRJ output without repairing or
 normalizing it; the comparison SVGs make the resulting conversion limitations
 visible.
-
-To regenerate only Sample024's Simple Route JSON and the SRJ panel of its
-comparison SVG from the checked-in Circuit JSON, run:
-
-```sh
-bun run generate:sample024
-bun run test
-```
-
-This uses the core and autorouter versions pinned in `package.json` and
-`bun.lock`, validates the five open keepout outlines, and preserves the
-original Altium and Circuit JSON comparison panels. The official releases
-`@tscircuit/core@0.0.2163` and `@tscircuit/capacity-autorouter@0.0.985` contain
-the merged [core #4669](https://github.com/tscircuit/core/pull/4669) and
-[autorouter #3098](https://github.com/tscircuit/tscircuit-autorouter/pull/3098)
-fixes.
